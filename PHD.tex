@@ -1,0 +1,587 @@
+\documentclass[11pt,twoside,openright]{report}
+\usepackage[a4paper,width=155mm, inner=25mm, top=30mm,bottom=40mm, marginparsep=0mm]{geometry}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{longtable}
+\usepackage[czech]{babel} 
+\usepackage{graphicx}
+\usepackage{emptypage} % maže číslování na prázdných stranách
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{formatting,amsfonts,amsmath,amssymb}
+\usepackage{booktabs,mathtools}
+\usepackage{lipsum,url}
+\usepackage[unicode]{hyperref}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{float}
+\usepackage{mwe}
+\usepackage{appendix}
+\usepackage{pdfpages}
+\usepackage{etoolbox}
+\usepackage[nottoc]{tocbibind}
+\usepackage{tikz}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{csquotes}
+\usetikzlibrary{shapes, arrows.meta}
+\usetikzlibrary{backgrounds,calc}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\BeforeBeginEnvironment{appendices}{\gdef\thechapter{\ }}
+\AtBeginEnvironment{appendices}{\renewcommand\thesection{\Alph{section}}}
+
+% \cmidrule have problem with Czech
+\usepackage{regexpatch}
+\makeatletter
+% Change the `-` delimiter to an active character
+\xpatchparametertext\@@@cmidrule{-}{\cA-}{}{}
+\xpatchparametertext\@cline{-}{\cA-}{}{}
+\makeatother
+
+%\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage{fancybox}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmus}
+\makeatother
+\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{%
+%  \markboth{\MakeUppercase{\thechapter\ \quad  #1}}{}% 
+%}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\MakeUppercase{#1}}{}% 
+}
+\fancyfoot{}{}{}
+\fancyhead[LO,LE]{}
+\fancyhead[RO]{\leftmark}
+\fancyhead[RE]{}
+\fancyfoot[RO]{\vspace*{0.8\baselineskip}\thepage}
+\fancyfoot[LE]{\vspace*{0.8\baselineskip}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{%
+\fancyhead[RO]{}
+\fancyhead[LO,LE]{}
+\fancyfoot[RO]{\vspace*{0.8\baselineskip}\thepage}
+\fancyfoot[LE]{\vspace*{0.8\baselineskip}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+\makeatletter
+\renewcommand\@dotsep{300}   % default value 4.5
+\makeatother
+
+\linespread{1.25}
+\begin{document}
+\pagenumbering{gobble}
+
+\input{VNITRNOSTI/main_info}
+% TAK AT TO JDE OD RUKY
+
+\input{VNITRNOSTI/uvod}
+\input{VNITRNOSTI/adaptivni_filtry}
+\input{VNITRNOSTI/nd_metody}
+
+\input{VNITRNOSTI/gpd}
+%\input{VNITRNOSTI/cile}
+\input{VNITRNOSTI/ese}
+\input{VNITRNOSTI/vysledky}
+\input{VNITRNOSTI/zaver}
+
+\renewcommand{\bibname}{Publikace autora}
+\begin{thebibliography}{A}
+\end{thebibliography}
+
+\begin{enumerate}[label={[V\arabic*]}]
+    \item \label{ese_mdpi} VRBA, Jan; MAREŠ, Jan. Introduction to Extreme Seeking Entropy. \textit{Entropy}, 2020, 22.1: 93.
+  	\item \label{appel2}VRBA, Jan; MAREŠ, Jan. Computational Performance of the Parameters Estimation in Extreme Seeking Entropy Algorithm. In: \textit{2020 International Conference on Applied Electronics (AE)}. IEEE, 2020. p. 1-4.
+	\item \label{appel3}VRBA, Jan; MAREŠ, Jan. ROC Analysis of Extreme Seeking Entropy for Trend Change Detection. In: \textit{2020 International Conference on Applied Electronics (AE)}. IEEE, 2020. p. 1-4.  
+	\item \label{artep}VRBA, Jan. Využití fuzzy systémů a algoritmu learning entropy pro detekci změn stavů bioprocesu. In: \textit{Automatizacia a riadenie v teorii a praxi ARTEP 2017}. Technická univerzita Košice, 2017.
+
+	\item \label{asr} VRBA, Jan. \textit{XLIII. Seminář ASŘ - Adaptivní metoda detekce} [přednáška]. Ostrava: VŠB TU Ostrava, 27.4.2018.
+    \item \label{appel1}VRBA, Jan. Adaptive Novelty Detection with Generalized Extreme Value Distribution. In: \textit{2018 International Conference on Applied Electronics (AE)}. IEEE, 2018. p. 1-4.
+    \item \label{ijcnn}BUKOVSKÝ, Ivo, et al. Study of learning entropy for onset detection of epileptic seizures in EEG time series. In: \textit{2016 International Joint Conference on Neural Networks (IJCNN)}. IEEE, 2016. p. 3302-3305.
+
+    
+    \item \label{cyril}OSWALD, Cyril, et al. Novelty Detection in System Monitoring and Control with HONU. In: \textit{Applied Artificial Higher Order Neural Networks for Control and Recognition}. IGI Global, 2016. p. 61-78.
+
+
+	\item \label{roboti}VRBA, Jan, et al. An Automated Platform for Microrobot Manipulation. In: \textit{International Workshop on Soft Computing Models in Industrial and Environmental Applications}. Springer, Cham, 2020. p. 255-265.
+	\item \label{bila1}BÍLA, Jiří; VRBA, Jan. The Detection and Interpretation of Emergent Situations in ECG Signals. In: \textit{International Conference on Soft Computing-MENDEL}. Springer, Cham, 2016. p. 264-275.
+
+	\item \label{ijcnn3}MOJZES, Matej, et al. Feature selection via competitive levy flights. In: \textit{2016 International Joint Conference on Neural Networks (IJCNN)}. IEEE, 2016. p. 3731-3736.
+	
+	\item \label{bila2}BÍLA, Jiří; NOVÁK, Martin; VRBA, Jan. Detection of emergent situations in complex systems represented by algebras of transformations. In: \textit{MATEC Web of Conferences}. EDP Sciences, 2016. p. 02035.
+
+
+
+	
+	\item \label{artep2}BUKOVSKÝ, Ivo, OSWALD, Cyril, VRBA, Jan. Případová studie použití entropie učení pro adaptivní detekci při řízení spalování tuhých paliv. In: \textit{Automatizácia a riadenie v teórii a praxi 2015}. Technická univerzita Košice, 2015.
+	
+
+	
+\end{enumerate}
+
+
+
+
+
+
+\renewcommand{\bibname}{Literatura}
+\begin{thebibliography}{L}
+\bibitem{expo}SHARMA, Anish and ANDREWS, Rebecca. Managing-Exponential-Data-Growth-and-Application-Modernization. \textit{IBM} [online]. 11 November 1999. [cit. 11.8.2020]. Dostupné z: https://www.ibm.com/cloud/blog/managing-exponential-data-growth-and-application-modernization 
+\bibitem{haykin}HAYKIN, Simon S. \textit{Adaptive filter theory}. Pearson Education India, 2008.
+\bibitem{proakis}PROAKIS, John G. a Dimitris G. MANOLAKIS. \textit{Digital signal processing: principles, algorithms, and applications}. Pearson Education India, 2001.
+\bibitem{dirac}STRICHARTZ, Robert S. \textit{A guide to distribution theory and Fourier transforms}. World Scientific Publishing Company, 2003.
+\bibitem{kvantizace}GERSHO, Allen; GRAY, Robert M. \textit{Vector quantization and signal compression}. Springer Science \& Business Media, 2012.
+\bibitem{eeg}OOSTENVELD, Robert; PRAAMSTRA, Peter. The five percent electrode system for high-resolution EEG and ERP measurements. \textit{Clinical neurophysiology}, 2001, 112.4: 713-719.
+\bibitem{honu}GUPTA, Madan M., et al. Fundamentals of higher order neural networks for modeling and simulation. In: \textit{Artificial Higher Order Neural Networks for Modeling and Simulation}. IGI Global, 2013. p. 103-133.
+\bibitem{fuzzyf}WANG, L.-X.; MENDEL, Jerry M. Fuzzy adaptive filters, with application to nonlinear channel equalization. \textit{IEEE Transactions on Fuzzy Systems}, 1993, 1.3: 161-170.
+\bibitem{fuzzywang}WANG, L.-X. \textit{A course in fuzzy systems and control}. Upper Saddle River : Prentice-Hall, 1997.
+\bibitem{rls_kalman}MANDIC, Danilo P.; KANNA, Sithan; CONSTANTINIDES, Anthony G. On the intrinsic relationship between the least mean square and Kalman filters [Lecture Notes]. \textit{IEEE Signal Processing Magazine}, 2015, 32.6: 117-122.
+\bibitem{rls_mit}ROWELL, D. 2.161 Signal Processing: Continuous and Discrete, Fall 2008. 2008.
+\bibitem{miljkovic}MILJKOVIĆ, Dubravko. Review of novelty detection methods. In: \textit{The 33rd International Convention MIPRO}. IEEE, 2010. p. 593-598.
+\bibitem{zimek}ZIMEK, Arthur; FILZMOSER, Peter. There and back again: Outlier detection between statistical reasoning and data mining algorithms. \textit{Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery}, 2018, 8.6: e1280.
+\bibitem{markou1}MARKOU, Markos; SINGH, Sameer. Novelty detection: a review—part 1: statistical approaches. \textit{Signal processing}, 2003, 83.12: 2481-2497.
+\bibitem{markou2}MARKOU, Markos; SINGH, Sameer. Novelty detection: a review—part 2:: neural network based approaches. \textit{Signal processing}, 2003, 83.12: 2499-2521.
+\bibitem{pimentel}PIMENTEL, Marco AF, et al. A review of novelty detection. \textit{Signal Processing}, 2014, 99: 215-249.
+\bibitem{gmm1}REYNOLDS, Douglas A. Gaussian Mixture Models. \textit{Encyclopedia of biometrics}, 2009, 741.
+\bibitem{gmm2}HEYNS, Theo; HEYNS, Philippus Stephanus; DE VILLIERS, Johan Pieter. Combining synchronous averaging with a Gaussian mixture model novelty detection scheme for vibration-based condition monitoring of a gearbox. \textit{Mechanical Systems and Signal Processing}, 2012, 32: 200-215.
+\bibitem{gmm3}BISHOP, Christopher M. \textit{Pattern recognition and machine learning}. Springer, 2006.
+\bibitem{gmm4}DUDA, Richard O.; HART, Peter E.; STORK, David G. \textit{Pattern classification}. John Wiley \& Sons, 2012.
+\bibitem{gmm5}DOAN, AnHai; HALEVY, Alon; IVES, Zachary. \textit{Principles of data integration}. Elsevier, 2012.
+\bibitem{gmm6}ZHANG, Yu, et al. Detection of emerging faults on industrial gas turbines using extended Gaussian mixture models. \textit{International Journal of Rotating Machinery}, 2017, 2017.
+\bibitem{gmm7}NASIOS, Nikolaos; BORS, Adrian G. Variational learning for Gaussian mixture models. \textit{IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics)}, 2006, 36.4: 849-862.
+\bibitem{gmm8}MIYAZAKI, Bungo, et al. Change detection of orders in stock markets using a Gaussian mixture model. \textit{Intelligent Systems in Accounting, Finance and Management}, 2014, 21.3: 169-191.
+\bibitem{gmm9}DEMPSTER, Arthur P.; LAIRD, Nan M.; RUBIN, Donald B. Maximum likelihood from incomplete data via the EM algorithm. \textit{Journal of the Royal Statistical Society: Series B (Methodological)}, 1977, 39.1: 1-22.
+\bibitem{gmm10}WATANABE, Hidenori; MURAMATSU, Shogo; KIKUCHI, Hisakazu. Interval calculation of EM algorithm for GMM parameter estimation. In: \textit{Proceedings of 2010 IEEE International Symposium on Circuits and Systems}. IEEE, 2010. p. 2686-2689.
+\bibitem{gmm11}BOUGUILA, Nizar a Wentao FAN, ed. \textit{Mixture Models and Applications} Springer International Publishing, 2020.
+\bibitem{evt1}ROBERTS, Stephen J. Novelty detection using extreme value statistics. \textit{IEE Proceedings-Vision, Image and Signal Processing}, 1999, 146.3: 124-129.
+\bibitem{evt2}FISHER, Ronald Aylmer; TIPPETT, Leonard Henry Caleb. Limiting forms of the frequency distribution of the largest or smallest member of a sample. In: \textit{Mathematical Proceedings of the Cambridge Philosophical Society}. Cambridge University Press, 1928. p. 180-190.
+\bibitem{gpd5}PICKANDS III, James, et al. Statistical inference using extreme order statistics. \textit{The Annals of Statistics}, 1975, 3.1: 119-131.
+\bibitem{gpd6}BALKEMA, August A.; DE HAAN, Laurens. Residual life time at great age. \textit{The Annals of probability}, 1974, 792-804.
+\bibitem{evt3}CLIFTON, David Andrew; HUGUENY, Samuel; TARASSENKO, Lionel. Novelty detection with multivariate extreme value statistics. \textit{Journal of signal processing systems}, 2011, 65.3: 371-389.
+\bibitem{maha}MAHALANOBIS, Prasanta Chandra. \textit{On the generalized distance in statistics}. National Institute of Science of India, 1936.
+\bibitem{evt5}CLIFTON, David A., et al. Extending the generalised pareto distribution for novelty detection in high-dimensional spaces.
+\bibitem{kalman}GREWAL, Mohinder S.; ANDREWS, Angus P. \textit{Kalman filtering: Theory and Practice with MATLAB}. John Wiley \& Sons, 2014.
+\bibitem{evt4}LEE, Hyoung-joo; ROBERTS, Stephen J. On-line novelty detection using the kalman filter and extreme value theory. In: \textit{2008 19th International Conference on Pattern Recognition}. IEEE, 2008. p. 1-4.
+ \textit{Journal of signal processing systems}, 2014, 74.3: 323-339.
+\bibitem{evt6}SIFFER, Alban, et al. Anomaly detection in streams with extreme value theory. In: \textit{Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}. 2017. p. 1067-1075.
+\bibitem{evt7}HUANG, Yan, et al. Generalized Pareto Model Based on Particle Swarm Optimization for Anomaly Detection. \textit{IEEE Access}, 2019, 7: 176329-176338.
+\bibitem{pso}KENNEDY, James; EBERHART, Russell. Particle swarm optimization. In: \textit{Proceedings of ICNN'95-International Conference on Neural Networks}. IEEE, 1995. p. 1942-1948.
+\bibitem{evt8}LUCA, Stijn; CLIFTON, David A.; VANRUMSTE, Bart. One-class classification of point patterns of extremes. \textit{The Journal of Machine Learning Research}, 2016, 17.1: 6581-6601.
+\bibitem{hmm4}GALES, Mark; YOUNG, Steve. \textit{The application of hidden Markov models in speech recognition}. Now Publishers Inc, 2008.
+\bibitem{hmm3}FINK, Gernot A. \textit{Markov models for pattern recognition: from theory to applications}. Springer Science \& Business Media, 2014.
+\bibitem{hmm5}KOSKI, Timo. \textit{Hidden Markov models for bioinformatics}. Springer Science \& Business Media, 2001.
+\bibitem{hmm1}MACDONALD, Iain L.; ZUCCHINI, Walter. \textit{Hidden Markov and other models for discrete-valued time series}. CRC Press, 1997.
+\bibitem{hmm2}BHAR, Ramaprasad; HAMORI, Shigeyuki. \textit{Hidden Markov models: applications to financial economics}. Springer Science \& Business Media, 2004.
+\bibitem{hmm6}WARRENDER, Christina; FORREST, Stephanie; PEARLMUTTER, Barak. Detecting intrusions using system calls: Alternative data models. In: \textit{Proceedings of the 1999 IEEE symposium on security and privacy (Cat. No. 99CB36344)}. IEEE, 1999. p. 133-145.
+\bibitem{hmm7}ZOHREVAND, Zahra, et al. Hidden Markov based anomaly detection for water supply systems. In: \textit{2016 IEEE International Conference on Big Data (Big Data)}. IEEE, 2016. p. 1551-1560.
+\bibitem{hmm8}YU, Jianbo. Adaptive hidden Markov model-based online learning framework for bearing faulty detection and performance degradation monitoring. \textit{Mechanical Systems and Signal Processing}, 2017, 83: 149-162.
+\bibitem{hmm9}SCHMIDT, Stephan; HEYNS, Philippus Stephanus; DE VILLIERS, Johan Pieter. A novelty detection diagnostic methodology for gearboxes operating under fluctuating operating conditions using probabilistic techniques. \textit{Mechanical Systems and Signal Processing}, 2018, 100: 152-166.
+\bibitem{pca}ABDI, Hervé; WILLIAMS, Lynne J. Principal component analysis. \textit{Wiley interdisciplinary reviews: computational statistics}, 2010, 2.4: 433-459.
+\bibitem{hmm10}LI, Jinbo; PEDRYCZ, Witold; JAMAL, Iqbal. Multivariate time series anomaly detection: A framework of Hidden Markov Models. \textit{Applied Soft Computing}, 2017, 60: 229-240.
+\bibitem{hmm11}TOLOUE, Kamran Fartash; JAHAN, Majid Vafaei. Anomalous behavior detection of marine vessels based on Hidden Markov Model. In: \textit{2018 6th Iranian Joint Congress on Fuzzy and Intelligent Systems (CFIS)}. IEEE, 2018. p. 10-12.
+\bibitem{hmm12}ZHAO, Jingling, et al. Software Abnormal Behavior Detection Based on Hidden Markov Model. In: \textit{International Conference on Innovative Mobile and Internet Services in Ubiquitous Computing}. Springer, Cham, 2017. p. 929-940.
+\bibitem{hmm13}LI, Peng, et al. Application of hidden Markov model in SQL injection detection. In: \textit{2017 IEEE 41st Annual Computer Software and Applications Conference (COMPSAC)}. IEEE, 2017. p. 578-583.
+\bibitem{hmm14}ROBINSON, William N.; ARIA, Andrea. Sequential fraud detection for prepaid cards using hidden Markov model divergence. \textit{Expert Systems with Applications}, 2018, 91: 235-251.
+\bibitem{svm2}CORTES, Corinna; VAPNIK, Vladimir. Support-vector networks. \textit{Machine learning}, 1995, 20.3: 273-297.
+\bibitem{svm1}BOSER, Bernhard E.; GUYON, Isabelle M.; VAPNIK, Vladimir N. A training algorithm for optimal margin classifiers. In: \textit{Proceedings of the fifth annual workshop on Computational learning theory}. 1992. p. 144-152.
+\bibitem{perceptron}GUPTA, Madan; JIN, Liang; HOMMA, Noriyasu. \textit{Static and dynamic neural networks: from fundamentals to advanced theory}. John Wiley \& Sons, 2004.
+\bibitem{ml1}MOHRI, Mehryar; ROSTAMIZADEH, Afshin; TALWALKAR, Ameet. \textit{Foundations of machine learning}. MIT press, 2018.
+\bibitem{ml2}PEDREGOSA, Fabian, et al. Scikit-learn: Machine learning in Python. \textit{The Journal of machine Learning research}, 2011, 12: 2825-2830.
+\bibitem{svm3}MANNING, Christopher D.; SCHÜTZE, Hinrich; RAGHAVAN, Prabhakar. \textit{Introduction to information retrieval}. Cambridge university press, 2008.
+\bibitem{svm4}CRISTIANINI, Nello, et al. \textit{An introduction to support vector machines and other kernel-based learning methods}. Cambridge university press, 2000.
+\bibitem{kernel}AISERMAN, M. A.; BRAVERMAN, E. M.; ROZONOER, L. I. Theoretical foundations of the potential function method in pattern recognition. \textit{Avtomat. i Telemeh}, 1964, 25.6: 917-936.
+\bibitem{svm5}SCHÖLKOPF, Bernhard, et al. Support vector method for novelty detection. In: \textit{Advances in neural information processing systems}. 2000. p. 582-588.
+\bibitem{svm6}YAN, Ke; JI, Zhiwei; SHEN, Wen. Online fault detection methods for chillers combining extended kalman filter and recursive one-class SVM. \textit{Neurocomputing}, 2017, 228: 205-212.
+\bibitem{svm7}SADOOGHI, Mohammad Saleh; KHADEM, Siamak Esmaeilzadeh. Improving one class support vector machine novelty detection scheme using nonlinear features. \textit{Pattern Recognition}, 2018, 83: 14-33.
+\bibitem{ae}PINCUS, Steven M. Approximate entropy as a measure of system complexity. \textit{Proceedings of the National Academy of Sciences}, 1991, 88.6: 2297-2301.
+\bibitem{se}RICHMAN, Joshua S.; MOORMAN, J. Randall. Physiological time-series analysis using approximate entropy and sample entropy.\textit{American Journal of Physiology-Heart and Circulatory Physiology}, 2000, 278.6: H2039-H2049.
+\bibitem{pe}BANDT, Christoph; POMPE, Bernd. Permutation entropy: a natural complexity measure for time series. \textit{Physical review letters}, 2002, 88.17: 174102.
+\bibitem{svm8}SOLARZ, A., et al. Automated novelty detection in the WISE survey with one-class support vector machines. \textit{Astronomy \& Astrophysics}, 2017, 606: A39.
+\bibitem{som0}KOHONEN, Teuvo. The self-organizing map. \textit{Proceedings of the IEEE}, 1990, 78.9: 1464-1480.
+\bibitem{somS2}AGUAYO, Leonardo; BARRETO, Guilherme A. Novelty detection in time series using self-organizing neural networks: a comprehensive evaluation. \textit{Neural Processing Letters}, 2018, 47.2: 717-744.
+\bibitem{somS}YIN, Hujun. Nonlinear dimensionality reduction and data visualization: a review. \textit{International Journal of Automation and Computing}, 2007, 4.3: 294-303.
+\bibitem{som6}LI, Menglu; KASHEF, Rasha; IBRAHIM, Ahmed. Multi-Level Clustering-Based Outlier’s Detection (MCOD) Using Self-Organizing Maps. \textit{Big Data and Cognitive Computing}, 2020, 4.4: 24.
+\bibitem{klastry}GAN, Guojun; MA, Chaoqun; WU, Jianhong. Data clustering: theory, algorithms, and applications. \textit{Society for Industrial and Applied Mathematics}, 2007.
+\bibitem{som3}OLSZEWSKI, Dominik. Fraud detection using self-organizing map visualizing the user profiles. \textit{Knowledge-Based Systems}, 2014, 70: 324-334.
+\bibitem{som1}BERNARD, Yann; HUEBER, Nicolas; GIRAU, Bernard. Novelty detection with self-organizing maps for autonomous extraction of salient tracking features. In: \textit{International Workshop on Self-Organizing Maps}. Springer, Cham, 2019. p. 100-109.
+\bibitem{dynamic_neural}TAYLOR, John G. Neural ‘bubble’dynamics in two dimensions: foundations. \textit{Biological cybernetics}, 1999, 80.6: 393-409.
+\bibitem{sal}CHI, Dongxiang. Self-organizing map-based color image segmentation with k-means clustering and saliency map. \textit{International Scholarly Research Notices, 2011}, 2011.
+\bibitem{som2}RATRE, Avinash; PANKAJAKSHAN, Vinod. Tucker visual search-based hybrid tracking model and fractional Kohonen self-organizing map for anomaly localization and detection in surveillance videos. \textit{The Imaging Science Journal}, 2018, 66.4: 195-210.
+\bibitem{som4}RIGAMONTI, Marco, et al. Identification of the degradation state for condition-based maintenance of insulated gate bipolar transistors: A self-organizing map approach. \textit{Microelectronics Reliability}, 2016, 60: 48-61.
+\bibitem{som7}NAM, Tran Manh, et al. Self-organizing map-based approaches in DDoS flooding detection using SDN. In: \textit{2018 International Conference on Information Networking (ICOIN)}. IEEE, 2018. p. 249-254.
+\bibitem{som8}ELMOUGY, Samir, et al. A parameter based growing ensemble of self-organizing maps for outlier detection in healthcare. \textit{Cluster Computing}, 2019, 22.1: 2437-2460.
+\bibitem{som5}MATIĆ, Frano; KALINIĆ, Hrvoje; VILIBIĆ, Ivica. Interpreting Self-Organizing Map errors in the classification of ocean patterns. \textit{Computers \& geosciences}, 2018, 119: 9-17.
+\bibitem{cnn1}SIMONYAN, Karen; ZISSERMAN, Andrew. Very deep convolutional networks for large-scale image recognition. \textit{arXiv preprint arXiv:1409.1556}, 2014.
+\bibitem{deep}GOODFELLOW, Ian, et al. \textit{Deep learning}. Cambridge: MIT press, 2016.
+\bibitem{cnn2}TANG, Zhiyi, et al. Convolutional neural network‐based data anomaly detection method using multiple information for structural health monitoring. \textit{Structural Control and Health Monitoring}, 2019, 26.1: e2296.
+\bibitem{cnn3}STAAR, Benjamin; LÜTJEN, Michael; FREITAG, Michael. Anomaly detection with convolutional neural networks for industrial surface inspection. \textit{Procedia CIRP}, 2019, 79: 484-489.
+\bibitem{cnn4}BOZKURT, Baris; GERMANAKIS, Ioannis; STYLIANOU, Yannis. A study of time-frequency features for CNN-based automatic heart sound classification for pathology detection. \textit{Computers in biology and medicine}, 2018, 100: 132-143.
+\bibitem{cnn5}SABOKROU, Mohammad, et al. Adversarially learned one-class classifier for novelty detection. In: \textit{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition}. 2018. p. 3379-3388.
+\bibitem{cnn6}YAHAYA, Salisu Wada; LOTFI, Ahmad; MAHMUD, Mufti. A consensus novelty detection ensemble approach for anomaly detection in activities of daily living. \textit{Applied Soft Computing}, 2019, 83: 105613.
+\bibitem{cnn7}GHOSAL, Tirthankar, et al. Novelty goes deep. A deep neural solution to document level novelty detection. In: \textit{Proceedings of the 27th International Conference on Computational Linguistics}. 2018. p. 2802-2813.
+\bibitem{cnn8}OZA, Poojan; PATEL, Vishal M. One-class convolutional neural network. \textit{IEEE Signal Processing Letters}, 2018, 26.2: 277-281.
+\bibitem{cnn9}SCHULTHEISS, Alexander, et al. Finding the unknown: Novelty detection with extreme value signatures of deep neural activations. In: \textit{German Conference on Pattern Recognition}. Springer, Cham, 2017. p. 226-238.
+\bibitem{auto1}NICOLAU, Miguel, et al. A hybrid autoencoder and density estimation model for anomaly detection. In: \textit{International Conference on Parallel Problem Solving from Nature}. Springer, Cham, 2016. p. 717-726.
+\bibitem{auto2}AN, Jinwon; CHO, Sungzoon. Variational autoencoder based anomaly detection using reconstruction probability. \textit{Special Lecture on IE}, 2015, 2.1: 1-18.
+\bibitem{auto3}MARCHI, Erik, Fabio VESPERINI, Florian EYBEN, Stefano SQUARTINI a Bjorn SCHULLER. A novel approach for automatic acoustic novelty detection using a denoising autoencoder with bidirectional LSTM neural networks. In: \textit{2015 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)} 2015, p. 1996-2000.
+\bibitem{auto4}FENG, Qingsong, et al. Anomaly detection of spectrum in wireless communication via deep auto-encoders. \textit{The Journal of Supercomputing}, 2017, 73.7: 3161-3178.
+\bibitem{auto5}DOMINGUES, Rémi, et al. Deep Gaussian Process autoencoders for novelty detection. \textit{Machine Learning}, 2018, 107.8-10: 1363-1383.
+\bibitem{auto6}BHATTACHARJEE, Supritam; MANDAL, Devraj; BISWAS, Soma. Autoencoder based novelty detection for generalized zero shot learning. In: \textit{2019 IEEE International Conference on Image Processing (ICIP)}. IEEE, 2019. p. 3646-3650.
+\bibitem{auto7}KIEU, Tung, et al. Outlier Detection for Time Series with Recurrent Autoencoder Ensembles. In: \textit{IJCAI}. 2019. p. 2725-2732.
+\bibitem{auto8}MARCHI, Erik, et al. Deep recurrent neural network-based autoencoders for acoustic novelty detection. \textit{Computational intelligence and neuroscience}, 2017, 2017.
+\bibitem{auto9}KAWACHI, Yuta; KOIZUMI, Yuma; HARADA, Noboru. Complementary set variational autoencoder for supervised anomaly detection. In: \textit{2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}. IEEE, 2018. p. 2366-2370.
+\bibitem{auto10}WANG, Xuhong, et al. adVAE: A self-adversarial variational autoencoder with Gaussian anomaly prior knowledge for anomaly detection. \textit{Knowledge-Based Systems}, 2020, 190: 105187.
+\bibitem{diniz0}DINIZ, Paulo Sergio Ramirez. \textit{Adaptive filtering: algorithms and practical implementation}. Springer, 2008.
+\bibitem{set_member}GOLLAMUDI, Sridhar, et al. Set-membership filtering and a set-membership normalized LMS algorithm with an adaptive step size. \textit{IEEE Signal Processing Letters}, 1998, 5.5: 111-114.
+\bibitem{diniz1}DINIZ, Paulo SR; YAZDANPANAH, Hamed. Data censoring with set-membership algorithms. In: \textit{2017 IEEE Global Conference on Signal and Information Processing (GlobalSIP)}. IEEE, 2017. p. 121-125.
+\bibitem{set_member_robot}ZHOU, Bo, et al. Multi-sensor fusion robust localization for indoor mobile robots based on a set-membership estimator. In: \textit{2015 IEEE International Conference on Cyber Technology in Automation, Control, and Intelligent Systems (CYBER)}. IEEE, 2015. p. 157-162.
+\bibitem{set_member_robot_voda}JAULIN, Luc. Robust set-membership state estimation; application to underwater robotics. \textit{Automatica}, 2009, 45.1: 202-206.
+\bibitem{set_member_robot_chyba}HUANG, Jian; WANG, Yuan; FUKUDA, Toshio. Set-membership-based fault detection and isolation for robotic assembly of electrical connectors. \textit{IEEE Transactions on Automation Science and Engineering}, 2016, 15.1: 160-171.
+\bibitem{ivoLE1}BUKOVSKY, Ivo. Learning entropy: Multiscale measure for incremental learning. \textit{Entropy}, 2013, 15.10: 4159-4187.
+\bibitem{ivoLE2}BUKOVSKY, Ivo; KINSNER, Witold; HOMMA, Noriyasu. Learning Entropy as a Learning-Based Information Concept. \textit{Entropy}, 2019, 21.2: 166.
+\bibitem{elbnd1}CEJNEK, Matous; BUKOVSKY, Ivo. Concept drift robust adaptive novelty detection for data streams. \textit{Neurocomputing}, 2018, 309: 46-53.
+\bibitem{elbnd2} CEJNEK, Matous; BUKOVSKY, Ivo. Influence of type and level of noise on the performance of an adaptive novelty detector. In: \textit{2017 IEEE 16th International Conference on Cognitive Informatics \& Cognitive Computing (ICCI* CC)}. IEEE, 2017. p. 373-377.
+\bibitem{elbnd3}CEJNEK, Matous; BUKOVSKY, Ivo; VYSATA, Oldrich. Adaptive classification of EEG for dementia diagnosis. In: \textit{2015 International Workshop on Computational Intelligence for Multimedia Understanding (IWCIM)}. IEEE, 2015. p. 1-5.
+\bibitem{grubbs}GRUBBS, Frank E. Procedures for detecting outlying observations in samples. \textit{Technometrics}, 1969, 11.1: 1-21.
+\bibitem{gpd4}LIMPERT, Eckhard; STAHEL, Werner A. Problems with using the normal distribution–and ways to improve quality and efficiency of data analysis. \textit{PLoS One}, 2011, 6.7: e21403.
+\bibitem{gpd1}FORBES, Catherine, et al. \textit{Statistical distributions}. John Wiley \& Sons, 2011.
+\bibitem{gpd2}COLES, Stuart, et al. \textit{An introduction to statistical modeling of extreme values}. London: Springer, 2001.
+\bibitem{gpd3}LEE, Hyoung-joo; ROBERTS, Stephen J. On-line novelty detection using the kalman filter and extreme value theory. In: \textit{2008 19th International Conference on Pattern Recognition}. IEEE, 2008. p. 1-4.
+\bibitem{scarrott2012review}SCARROTT, Carl; MACDONALD, Anna. A review of extreme value threshold es-timation and uncertainty quantification. \textit{REVSTAT–Statistical Journal}, 2012, 10.1: 33-60.
+\bibitem{ferreira2003optimising}FERREIRA, A.; DE HAAN, Laurens; PENG, Liang. On optimising the estimation of high quantiles of a probability distribution. \textit{Statistics}, 2003, 37.5: 401-434.
+\bibitem{loretan1994testing}LORETAN, Mico; PHILLIPS, Peter CB. Testing the covariance stationarity of heavy-tailed time series: An overview of the theory with applications to several financial datasets. \textit{Journal of empirical finance}, 1994, 1.2: 211-248.
+\bibitem{mom_orig}HOSKING, Jonathan RM; WALLIS, James R. Parameter and quantile estimation for the generalized Pareto distribution. \textit{Technometrics}, 1987, 29.3: 339-349.
+\bibitem{DuMouchel}DUMOUCHEL, William H. Estimating the stable index $\alpha$ in order to measure tail thickness: a critique. \textit{The Annals of Statistics}, 1983, 1019-1031.
+\bibitem{Luceno}LUCENO, Alberto. Fitting the generalized Pareto distribution to data using maximum goodness-of-fit estimators. \textit{Computational Statistics \& Data Analysis}, 2006, 51.2: 904-917.
+\bibitem{zhang1}ZHANG, Jin. Likelihood moment estimation for the generalized Pareto distribution. \textit{Australian \& New Zealand Journal of Statistics}, 2007, 49.1: 69-77.
+\bibitem{zhao}ZHAO, Xu, et al. A New Parameter Estimator for the Generalized Pareto Distribution under the Peaks over Threshold Framework. \textit{Mathematics}, 2019, 7.5: 406.
+\bibitem{park}PARK, Myung Hyun; KIM, Joseph HT. Estimating extreme tail risk measures with generalized Pareto distribution. \textit{Computational Statistics \& Data Analysis}, 2016, 98: 91-104.
+\bibitem{gpd_est}DE ZEA BERMUDEZ, P.; KOTZ, Samuel. Parameter estimation of the generalized Pareto distribution—Part I. \textit{Journal of Statistical Planning and Inference}, 2010, 140.6: 1353-1373.
+\bibitem{history}HALD, Anders. \textit{A History of Mathematical Statistics from 1750 to 1930}. New York: Wiley, 1998.
+\bibitem{stat_bible}MONTGOMERY, Douglas C.; RUNGER, George C. \textit{Applied Statistics and Probability for Engineers}. Wiley, 2007.
+\bibitem{SmithML}SMITH, Richard L. Maximum likelihood estimation in a class of nonregular cases. \textit{Biometrika}, 1985, 72.1: 67-90.
+\bibitem{grim}GRIMSHAW, Scott D. Computing maximum likelihood estimates for the generalized Pareto distribution. \textit{Technometrics}, 1993, 35.2: 185-191.
+\bibitem{mackey}MACKEY, Michael C.; GLASS, Leon. Oscillation and chaos in physiological control systems. \textit{Science}, 1977, 197.4300: 287-289.
+\bibitem{dead}SPANGENBERG, Mariana, et al. Detection of variance changes and mean value jumps in measurement noise for multipath mitigation in urban navigation. \textit{Navigation}, 2010, 57.1: 35-52.
+\bibitem{stepchange}L'ECUYER, Pierre. History of uniform random number generation. In: \textit{2017 Winter Simulation Conference (WSC)}. IEEE, 2017. p. 202-230.
+\bibitem{diagnosis}MAURYA, Mano Ram; RENGASWAMY, Raghunathan; VENKATASUBRAMANIAN, Venkat. Fault diagnosis using dynamic trend analysis: A review and recent developments. \textit{Engineering Applications of artificial intelligence}, 2007, 20.2: 133-146.
+\bibitem{roc_orig}EGAN, James P. \textit{Signal detection theory and ROC-analysis}. Academic press, 1975.
+\bibitem{roc_bible}FAWCETT, Tom. An introduction to ROC analysis. \textit{Pattern recognition letters}, 2006, 27.8: 861-874.
+\bibitem{fault}GERTLER, Janos. \textit{Fault detection and diagnosis in engineering systems}. CRC press, 1998.
+\bibitem{data_streams}YU, Kangqing, et al. Real-time Outlier Detection over Streaming Data. In: \textit{2019 IEEE SmartWorld, Ubiquitous Intelligence \& Computing, Advanced \& Trusted Computing, Scalable Computing \& Communications, Cloud \& Big Data Computing, Internet of People and Smart City Innovation (SmartWorld/SCALCOM/UIC/ATC/CBDCom/IOP/SCI)}. IEEE, 2019. p. 125-132.
+\bibitem{surveilance}
+RAMEZANI, Ramin; ANGELOV, Plamen; ZHOU, Xiaowei. A fast approach to novelty detection in video streams using recursive density estimation. In: \textit{2008 4th International IEEE Conference Intelligent Systems. IEEE, 2008}. p. 14-2-14-7.
+\bibitem{robotics_marslan}
+MARSLAND, Stephen; NEHMZOW, Ulrich; SHAPIRO, Jonathan. On-line novelty detection for autonomous mobile robots. \textit{Robotics and Autonomous Systems}, 2005, 51.2-3: 191-206.
+\bibitem{robotics}
+NEHMZOW, Ulrich, et al. Novelty detection as an intrinsic motivation for cumulative learning robots. In: \textit{Intrinsically Motivated Learning in Natural and Artificial Systems}. Springer, Berlin, Heidelberg, 2013. p. 185-207.
+\bibitem{python}VAN ROSUM, G.; DRAKE, F. L. \textit{Python 3 Reference Manual}. Scotts Valley, CA: CreateSpace, 2009.
+\bibitem{numpy}OLIPHANT, Travis E. \textit{A guide to NumPy (Vol. 1)}. Trelgol Publishing USA, 2006.
+\bibitem{scipy}VIRTANEN, P. et al.  SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. \textit{Nature Methods}, 2020, 17(3), 261-272.
+\bibitem{fermentace}MAREŠ, Jan, et al. Process state classification of fed-batch fermentation based on process variables analysis. \textit{Biochemical Engineering Journal}, 2016, 112: 178-185.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{thebibliography}
+
+
+
+\clearpage
+\pagenumbering{gobble}
+\chapter*{Příloha}
+\markboth{Příloha}{}
+\addcontentsline{toc}{chapter}{Příloha}
+\begin{appendices}
+\section{Vybrané publikace}
+\includepdf[pages=-]{entropy-22-00093-v2.pdf}
+\includepdf[pages=-]{PID6505089.pdf}
+\includepdf[pages=-]{PID6505103.pdf}
+
+\section{Případová studie použití algoritmu Learning Entropy a ad\-aptivního fuzzy filtru pro detekci změn stavů bioprocesu} \label{chap:LE_fuzzy}
+Cílem této studie je ověřit, že algoritmus LE, který byl doposud publikován s adaptivními filtry typu LNU a HONU, je možné použít i pro jiné typy adaptivních filtrů. Pro provedenou studii tak byl vybrán adaptivní fuzzy filtr (viz kapitola \ref{chap:fuzzyf}).
+\subsection{Popis bioprocesu a specifikace problému}
+Podle \cite{fermentace} je pro fermentační procesy, které probíhají v dávkovém režimu je podstatné, aby probíhalo správně dávkované živení substrátem. Pro tyto procesy je specifické, že se při nadměrných koncentracích stává substrát pro mikroorganismy toxickým a může dojít k tzv. přeživení a tím i zahubení těchto mikroorganismů. Naopak, v důsledku nedostatečného zábovení živinami může dojít k odumření kultivovaného organismu. Z tohoto pohledu se je tedy důležité v závislosti na koncentraci substrátu a stavu populace mikroorganismů měnit i strategii pro řízení procesu kultivace. Historicky byl stav bioprocesu klasifikován expertem, přičemž vyhodnocení bylo poměrně časově náročné a nebylo neobvyklé, že různí experti docházeli k rozdílným závěrům. Protože výnos fermentačního procesu je zásadním způsobem ovlivněn správnou klasifikací stavu ve kterém se právě nacházi, bylo by vhodné klasifikaci automatizovat a pokud možno zvýšit její přesnost. Tomuto problému je právě věnována publikace \cite{fermentace}, která řeší problém automatické klasifikace stavů bioprocesu kultivace bakterie \textit{Pseudomonas putida KT2442}. V této publikaci je navržen komplexní algoritmus pro online klasifikaci stavů bioprocesu. Autoři zde rozlišují celkem tři stavy bioprocesu kultivace \textit{Pseudomonas putida KT2442}, konkrétně:
+\begin{enumerate}
+    \item normální živení
+    \item přeživení
+    \item nedoživení
+\end{enumerate}
+Navržený algoritmus vyhodnocuje přísun vstupujících živin (Fm), respektive substrátu, a změny a trendu rozpuštěného kyslíku (DO), který je produkován bakteriemi \textit{Pseudomonas putida} a pomocí hřebenové regrese (v literatuře se vyskytuje také pod názvem Tichonova regularizace) je určován vývoj populace bakterií respektive stav bioprocesu. Vzhledem k tomu, že modely vývoje populace pro jednotlivé stavy jsou různé, mohlo by v průběhu experimentu dojít i k podstatným změnám v adaptivním modelu v okamžicích změn stavů kultivace. Tyto změny se mohli projevit neobvykle velkými přírůstky adaptivních parametrů. 
+\par
+Protože algoritmus Learning Entropy využívá přírůstku adaptivních parametrů, mohl by být vhodným nástrojem pro detekci změn stavů bioprocesu. Předpokládáme, že tedy existuje souvislost mezi změnami stavu bioprocesu a nárůstem Learning Entropy. Přestože může být proces kultivace bakterií \textit{Pseudonomas Putidas} modelován různými a různě složitými modely, pro využití algoritmu Learning Entropy se jeví výhodné použít jednoduché prediktory nebo sledovače. Dosud publikované články využívali pro algoritmus LE pouze FIR filtry, případně Volterrovy filtry, které mají adaptivní parametry v lineární závislosti. V tomto experimentu je použit adaptivní fuzzy filtr, jehož struktura je specifikována v kapitole \ref{chap:fuzzyf} a k jehož adaptaci byl použit algoritmus, který je uveden v kapitole \ref{chap:gd}.
+\par
+Použitý adaptivní fuzzy filtr má 9 pravidel ($M=9$), jehož $l$-té pravidlo je ve tvaru
+\begin{equation}
+    IF\;do(k-1)\; is\; A_1^l\;AND\;do(k-6)\;is\;A_2^l\;AND\;do(k-19)\;is\;A_3^l\;THEN\;do(k)\;is\;B^l
+\end{equation}
+kde $A_i^l$ je množina ve vstupním prostoru $U \subset R^3$ a $B^l$ je fuzzy množina ve výstupním prostoru $V \subset R$. V uvedeném pravidle jsou $do(k-1)$, $do(k-6)$, $do(k-19)$ a $do(k)$ lingvistické proměnné, které vyjadřují koncentraci rozpuštěného kyslíku $do$ v v diskrétních časových okamžicích $k$, $k-1$, $k-6$ respektive $k-19$, kde $k$ je diskrétní časový index. Vzhledem k tomu, že uvedený adaptivní fuzzy filtr používá Gaussovské funkce příslušnosti (viz kapitola \ref{chap:fuzzyf} je zobrazení popisující jeho výstup ve tvaru
+\begin{equation}
+    \hat{y}(\textbf{x}(k))=\frac{\sum_{j=1}^9 \overline{b}^j\Big[\prod_{i=1}^3 exp\Big(-\Big(\frac{x_i-\overline{x}_i^j}{\sigma_i^j}\Big)\Big)\Big]}{\sum_{j=1}^9 \Big[\prod_{i=1}^3 exp\Big(-\Big(\frac{x_i-\overline{x}_i^j}{\sigma_i^j}\Big)\Big)\Big]}
+\end{equation}
+kde vektor $\textbf{x}(k)$ je
+\begin{equation}
+    \textbf{x}(k)=[do(k-1),do(k-6),do(k-19)].
+\end{equation}\
+Protože hodnota koncetnrace rozpuštěného kyslíku je uváděna v procentech, platí pro všechna $x_i\in \langle 0;100\rangle$. K adaptování výše uvedeného filtru byl použit algoritmus gradient descent (viz kapitola \ref{chap:gd}. Maximální počet epoch byl stanoven na $q_{max}=100$ a požadovaná chyba predikce mezi výstupem adaptivního filtru a naměřenými daty na $\epsilon=0,001$. Rychlost učení byla během experimentů nastavena na $\mu=1$.
+\par
+Pro vyhodnocení novosti byla použita přímá verze algoritmu LE, takže
+\begin{equation}\label{eq:le_putida}
+    E(k)=max\{0, \sum_{j=1}^9 z(\abs{\Delta \overline{b^j})}-\beta\}
+\end{equation}
+kde funkce $z$ je dána rovnicí (XY) a $\beta$ je citlivostní parametr. Pro vyhodnocení novosti jsou tedy použity změny polohy středů množin ve výstupním prostoru, nikoliv změny parametrů fuzzy množin ve vstupním prostoru.
+
+\subsection{Experiment a zhodnocení}
+Experiment s použitím algoritmu LE a adaptivního fuzzy filtru byl uskutečněn na datech z kultivace bakterie \textit{Pseudonomas Putida}, který byl uskutečněn na Ústavu počítačové a řídicí techniky VŠCHT Praha. Celkem byly zpracovávány hodnoty ze dvou kultivací. Přestože bylo během experimentu měřena sada různých veličin (např. teplota, pH, atd.), osvědčil se pro použití LE signál rozpustěného kyslíku $do$ $[\%]$. Během experimentu bylo použito vzorkování $T=1$ $min$, což je vzhledem k rychlosti celého procesu dostatečně rychlé vzorkování. Počáteční nastavení parametrů adaptivního fuzzy filtru bylo provedeno tak, jak je popsáné v kapitole \ref{chap:gd}. Podstatný vliv na výsledek detekce změn stavu bioprocesu měla volba volba délky okna pro vyhodnocení změn adaptabilních parametrů filtru $M_{ND}$. Na základě experimentů s různými délkami byla nakonec zvolena délka okna $M_{ND}=20$.
+\par
+Na následujících obrázcích je znázorněn průběh signálu $do$ během první kultivace (viz obrázek \ref{fig:artep_1}), chyba predikce (viz obrázek \ref{fig:artep_3}) a odpovídající hodnoty $LE$ společně se stavy bioprocesu (viz obrázek \ref{fig:artep_4}). Význam stavů bioprocesu znázorněných na obrázku \ref{fig:artep_3} respektive obrázku \ref{fig:artep_6} jsou: 1 - nedoživení, 2 - živení, 3 - přeživení. Aby byli detekovány všechny změny stavu bioprocesů, byla stanovena hodnota parametru $\beta=2,58$ (viz rovnice \ref{eq:le_putida}).
+\par
+Data z druhé kultivace byla použita k ověření správného nastavení parametru $\beta$.  Obrázek \ref{fig:artep_2} zobrazuje průběh signálu $do$ během druhého experimentu. Chyba predikce adaptivního fuzzy filtru je zobrazena na obrázku \ref{fig:artep_5}.  Obrázek \ref{fig:artep_6} zobrazuje stavy bioprocesu během kultivace a odpovídající hodnoty $LE$. S tímto nastavením parametru $\beta$ se podařilo detekovat pouze tři změny bioprocesu. Nicméně pro jiné hodnoty délky okna $M_{ND}$ a hodnoty parametru $\beta$ se tyto změny detekovat podařilo. Je tedy zřejmé, že pro praktické použití je správná volba obou parametrů zásadní. Vzhledem k malému množství dat a časové náročnosti kultivace nebylo možné použít nějakou validační metodu. 
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{IMG/artep/artep17_1.png}
+    \caption{Průběh signálu $do$ během první kultivace}
+    \label{fig:artep_1}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{IMG/artep/artep17_3.png}
+    \caption{Chyba predikce $e$ během první kultivace}
+    \label{fig:artep_3}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{IMG/artep/artep17_4.png}
+    \caption{Stav bioprocesu a hodnota $LE$ první kultivace}
+    \label{fig:artep_5}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{IMG/artep/artep17_2.png}
+    \caption{Průběh signálu $do$ během druhé kultivace}
+    \label{fig:artep_2}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{IMG/artep/artep17_5.png}
+    \caption{Chyba predikce $e$ během druhé kultivace}
+    \label{fig:artep_4}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{IMG/artep/artep17_6.png}
+    \caption{Stav bioprocesu a hodnota $LE$ během druhé kultivace}
+    \label{fig:artep_6}
+\end{figure}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\section{Vyhodnocení přesnosti detekce změny trendu a \\ skokové změny parametrů generátoru signálu}\label{priloha:tab}
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{SNR [dB]} & \textbf{ESE [\%]} & \textbf{ELBND [\%]} & \textbf{LE [\%]} & \textbf{Err [\%]} \\ 
+\hline
+41.63 & 99.0 & 68.1 & 98.9 & 54.8 \\ 
+35.62 & 98.4 & 68.3 & 98.4 & 54.2 \\ 
+29.61 & 97.3 & 70.2 & 97.3 & 56.9 \\ 
+26.11 & 96.1 & 74.6 & 95.7 & 59.3 \\ 
+23.64 & 94.3 & 74.0 & 94.1 & 61.5 \\ 
+21.74 & 92.9 & 74.9 & 92.7 & 62.1 \\ 
+20.20 & 91.6 & 74.0 & 91.4 & 62.1 \\ 
+18.92 & 90.4 & 74.2 & 89.4 & 63.9 \\ 
+17.81 & 89.4 & 73.4 & 89.1 & 65.8 \\ 
+16.85 & 88.8 & 72.6 & 88.0 & 65.8 \\ 
+16.00 & 87.5 & 74.5 & 87.0 & 66.7 \\ 
+15.23 & 86.5 & 74.4 & 85.5 & 67.3 \\ 
+14.55 & 85.5 & 74.0 & 84.0 & 68.2 \\ 
+13.92 & 84.5 & 75.3 & 83.8 & 70.4 \\ 
+13.35 & 84.2 & 75.3 & 83.2 & 69.9 \\ 
+12.82 & 83.6 & 75.6 & 82.4 & 70.9 \\ 
+12.34 & 82.6 & 76.7 & 81.2 & 72.1 \\ 
+11.88 & 81.6 & 76.2 & 80.4 & 72.8 \\ 
+11.46 & 80.9 & 75.6 & 79.3 & 72.0 \\ 
+11.07 & 79.8 & 75.2 & 78.4 & 71.8 \\ 
+10.70 & 78.7 & 74.7 & 77.3 & 72.4 \\ 
+10.02 & 76.9 & 75.0 & 75.6 & 73.0 \\ 
+9.42 & 75.6 & 74.2 & 74.0 & 72.3 \\ 
+8.88 & 73.9 & 72.8 & 71.3 & 72.3 \\ 
+8.39 & 72.2 & 72.1 & 69.1 & 71.9 \\ 
+7.95 & 70.4 & 70.4 & 66.9 & 70.3 \\ 
+7.54 & 69.1 & 68.3 & 65.2 & 68.8 \\ 
+7.16 & 66.5 & 67.1 & 63.0 & 67.7 \\ 
+6.82 & 64.4 & 66.7 & 60.7 & 66.7 \\ 
+6.20 & 59.2 & 63.2 & 56.1 & 63.9 \\ 
+5.67 & 55.4 & 58.6 & 52.1 & 60.6 \\ 
+4.99 & 49.0 & 52.5 & 46.2 & 55.6 \\ 
+\hline
+\end{tabular}
+\caption{Úspěšnost detekce skokové změny trendu pro různé hodnoty SNR}
+\label{tab:trend}
+\end{center}
+\end{table}
+
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{SNR [dB]} & \textbf{ESE [\%]} & \textbf{ELBND [\%]} & \textbf{LE [\%]} & \textbf{Err [\%]} \\ 
+\hline
+39.70 & 100.0 & 94.6 & 99.5 & 95.2 \\ 
+33.68 & 100.0 & 94.6 & 98.7 & 95.3 \\ 
+30.16 & 99.8 & 94.7 & 98.1 & 95.4 \\ 
+27.67 & 99.5 & 94.7 & 96.7 & 95.3 \\ 
+25.73 & 99.2 & 94.6 & 96.4 & 95.4 \\ 
+25.07 & 99.1 & 94.6 & 96.3 & 95.4 \\ 
+24.15 & 98.9 & 94.5 & 96.2 & 95.2 \\ 
+23.33 & 98.6 & 94.3 & 95.9 & 95.0 \\ 
+22.82 & 98.5 & 94.2 & 95.7 & 94.9 \\ 
+22.11 & 98.1 & 94.2 & 95.7 & 95.1 \\ 
+21.67 & 97.8 & 94.3 & 95.2 & 94.8 \\ 
+20.66 & 97.4 & 94.0 & 94.8 & 94.5 \\ 
+19.75 & 96.9 & 93.9 & 93.9 & 94.2 \\ 
+18.93 & 96.7 & 93.8 & 93.6 & 94.2 \\ 
+18.19 & 96.4 & 93.5 & 93.1 & 94.0 \\ 
+17.77 & 95.7 & 93.1 & 92.5 & 93.6 \\ 
+17.51 & 95.3 & 92.7 & 92.2 & 93.2 \\ 
+17.12 & 94.8 & 92.1 & 91.6 & 92.7 \\ 
+16.88 & 94.5 & 92.1 & 91.1 & 92.4 \\ 
+16.52 & 94.0 & 91.8 & 90.7 & 92.1 \\ 
+16.29 & 94.1 & 91.6 & 90.3 & 92.1 \\ 
+15.96 & 93.5 & 91.5 & 90.2 & 91.7 \\ 
+15.75 & 92.8 & 91.4 & 89.5 & 91.2 \\ 
+15.24 & 91.7 & 91.0 & 88.4 & 91.0 \\ 
+15.04 & 91.4 & 90.8 & 88.0 & 90.8 \\ 
+14.76 & 90.7 & 90.0 & 87.5 & 90.6 \\ 
+14.48 & 90.3 & 89.5 & 86.9 & 90.3 \\ 
+14.31 & 90.2 & 89.2 & 86.3 & 90.1 \\ 
+14.13 & 90.1 & 88.9 & 85.6 & 89.9 \\ 
+13.88 & 89.1 & 88.4 & 85.5 & 89.5 \\ 
+10.60 & 78.8 & 80.2 & 75.2 & 82.3 \\ 
+10.09 & 76.6 & 77.9 & 73.6 & 80.4 \\ 
+9.62 & 74.6 & 75.9 & 71.8 & 78.0 \\ 
+9.19 & 72.1 & 73.6 & 69.6 & 75.6 \\ 
+8.78 & 69.9 & 71.6 & 68.0 & 73.6 \\ 
+8.41 & 68.2 & 70.4 & 65.7 & 71.2 \\ 
+8.05 & 66.5 & 68.8 & 64.2 & 69.1 \\ 
+7.72 & 63.9 & 67.4 & 62.0 & 67.2 \\ 
+7.40 & 61.5 & 64.2 & 59.6 & 64.8 \\ 
+3.64 & 30.1 & 32.4 & 30.1 & 31.4 \\ 
+1.33 & 11.7 & 11.2 & 11.5 & 9.7 \\ 
+\hline
+\end{tabular}
+\caption{Úspěšnost detekce skokové změny parametrů generátoru signálu pro vstupy z rovnoměrného rozdělení $U(-1,1)$}
+\label{tab:uniform}
+\end{center}
+\end{table}
+
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{SNR [dB]} & \textbf{ESE [\%]} & \textbf{ELBND [\%]} & \textbf{LE [\%]} & \textbf{Err [\%]} \\ 
+\hline
+43.86 & 100.0 & 96.1 & 99.9 & 94.8 \\ 
+34.32 & 100.0 & 96.1 & 98.4 & 94.9 \\ 
+31.83 & 99.8 & 95.8 & 98.1 & 94.7 \\ 
+29.89 & 99.6 & 96.0 & 97.7 & 94.6 \\ 
+28.31 & 99.4 & 96.0 & 97.1 & 94.6 \\  
+25.82 & 99.1 & 95.7 & 96.9 & 94.5 \\ 
+24.80 & 98.9 & 95.7 & 96.4 & 93.9 \\ 
+23.89 & 98.5 & 95.6 & 96.1 & 93.6 \\  
+22.31 & 97.9 & 95.0 & 95.5 & 92.7 \\ 
+21.96 & 97.6 & 94.8 & 95.3 & 92.5 \\ 
+21.62 & 97.5 & 94.7 & 95.3 & 92.4 \\ 
+20.98 & 96.5 & 94.2 & 94.5 & 91.6 \\ 
+20.39 & 96.1 & 94.1 & 93.9 & 91.5 \\ 
+19.84 & 95.8 & 93.5 & 93.8 & 91.2 \\ 
+18.83 & 95.2 & 92.7 & 92.6 & 90.0 \\ 
+18.37 & 94.9 & 92.5 & 92.3 & 89.7 \\ 
+17.93 & 94.7 & 92.2 & 91.8 & 88.5 \\  
+17.12 & 93.4 & 91.0 & 90.4 & 87.1 \\ 
+16.39 & 92.1 & 89.9 & 89.4 & 86.1 \\ 
+15.71 & 90.1 & 88.6 & 87.8 & 84.6 \\ 
+15.09 & 88.6 & 87.1 & 86.8 & 83.6 \\ 
+14.52 & 87.3 & 86.4 & 85.8 & 82.0 \\ 
+13.98 & 85.0 & 84.9 & 84.2 & 79.5 \\  
+13.02 & 82.1 & 81.7 & 81.6 & 76.4 \\ 
+12.16 & 79.7 & 78.9 & 78.8 & 73.6 \\ 
+11.77 & 78.6 & 77.8 & 77.9 & 72.3 \\ 
+11.05 & 75.9 & 74.8 & 74.1 & 69.3 \\ 
+10.88 & 75.0 & 74.1 & 73.6 & 68.8 \\ 
+10.09 & 71.3 & 70.4 & 69.7 & 65.5 \\ 
+9.67 & 68.8 & 68.7 & 67.0 & 63.9 \\ 
+9.27 & 67.1 & 65.9 & 65.0 & 62.2 \\ 
+9.01 & 65.8 & 64.0 & 63.5 & 60.9 \\ 
+8.77 & 64.2 & 62.0 & 62.0 & 59.0 \\ 
+8.10 & 59.9 & 58.1 & 57.8 & 54.9 \\ 
+7.89 & 58.2 & 56.8 & 56.4 & 54.1 \\ 
+7.41 & 55.5 & 55.1 & 53.8 & 50.5 \\ 
+6.97 & 52.1 & 52.2 & 50.8 & 46.6 \\ 
+6.20 & 45.9 & 47.3 & 45.6 & 42.1 \\ 
+5.54 & 41.0 & 40.7 & 40.1 & 37.8 \\ 
+4.98 & 36.3 & 36.5 & 36.5 & 34.7 \\ 
+4.08 & 30.0 & 28.8 & 28.4 & 27.3 \\ 
+3.71 & 27.4 & 26.0 & 25.9 & 24.5 \\ 
+3.10 & 21.6 & 22.2 & 21.4 & 20.5 \\ 
+2.85 & 19.9 & 20.3 & 19.2 & 19.4 \\   
+2.25 & 15.8 & 15.4 & 15.3 & 15.2 \\ 
+2.09 & 14.7 & 14.3 & 14.0 & 14.0 \\ 
+\hline
+\end{tabular}
+\caption{Úspěšnost detekce skokové změny parametrů generátoru signálu pro vstupy z normálního rozdělení $N(0,1)$}
+\label{tab:normal}
+\end{center}
+\end{table}
+\clearpage
+
+
+
+\end{appendices}
+
+
+
+\end{document}

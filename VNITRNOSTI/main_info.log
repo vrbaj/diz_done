@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.8.30)  15 OCT 2020 09:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.14)  15 OCT 2020 11:51
 entering extended mode
 **./main_info.tex
 (main_info.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
+LaTeX2e <2020-10-01> patch level 1
+L3 programming layer <2020-10-05> xparse <2020-03-03>
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -781,7 +781,7 @@ or  <return>  to continue without it.
 
 [1
 
-{C:/Users/vrbik/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+{C:/Users/vrbaj/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -7701,11 +7701,11 @@ Missing character: There is no n in font nullfont!
 
  
 Here is how much of TeX's memory you used:
- 51 strings out of 480790
- 730 string characters out of 2907055
- 245890 words of memory out of 3000000
- 16158 multiletter control sequences out of 15000+200000
- 532981 words of font info for 26 fonts, out of 3000000 for 9000
+ 51 strings out of 480236
+ 724 string characters out of 2880557
+ 270535 words of memory out of 3000000
+ 16702 multiletter control sequences out of 15000+200000
+ 535731 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 18i,10n,16p,981b,169s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,10n,42p,981b,168s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

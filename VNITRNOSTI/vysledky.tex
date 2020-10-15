@@ -321,7 +321,7 @@ kde $n_t$ reprezentuje počet vyhodnocovaných prahů zmenšený o 1. Výsledné
 \hline
 \multicolumn{2}{|l|}{} & \multicolumn{3}{c|}{\textbf{AUROC}} \\ \hline
 $\sigma_n$ & \textit{SNR [dB]} & \textit{ESE} & \textit{LE} & \textit{ELBND} \\ \hline
-0.1 & 35.8 & 0.9954 & \textbf{0.9952} & 0.8234\\ \hline
+0.1 & 35.8 & \textbf{0.9954} & 0.9952 & 0.8234\\ \hline
 0.2 & 30.0 & \textbf{0.9920} & 0.9912 & 0.8299 \\ \hline
 0.5 & 21.7 & \textbf{0.9816} & 0.9777 & 0.8288 \\ \hline
 1.0 & 16.2 & \textbf{0.9576} & 0.9496 & 0.8263 \\ \hline
@@ -351,7 +351,7 @@ Tučně jsou zvýrazněny hodnoty nejvyšší úspěšnosti detekce. Z výsledk�
 \begin{figure}[ht!]
     \centering
     \includegraphics[scale=0.7]{IMG/appel_roc/roc_01.eps}
-    \caption{ROC křivky v případě detekce změny trendu signálu obsahujícího aditivní gaussovský šum se směrodatnou odchylkou $\sigma=0.1$. Průměrná hodnota $SNR$ experimentů byla $SNR=35.80$ $dB$. Černá čerchovaná čára (RANDOM) reprezentuje náhodný klasifikátor.}
+    \caption{ROC křivky v případě detekce změny trendu signálu obsahujícího aditivní gaussovský šum se směrodatnou odchylkou $\sigma_n=0.1$. Průměrná hodnota $SNR$ experimentů byla $SNR=35.80$ $dB$. Černá čerchovaná čára (RANDOM) reprezentuje náhodný klasifikátor.}
     \label{fig:roc_01}
 \end{figure}
 \begin{figure}[ht!]
@@ -400,7 +400,7 @@ Pro výstup generátoru signálu platí vztah
 \begin{equation}
 y(k)=x_1(k)+x_2(k)+x_3(k)+v(k)
 \end{equation}
-pro všechny $1 \leq k \leq 200$. Člen $v(k)$ reprezentuje aditivní gaussovský šum s nulovou střední hodnotou a směrodatnou odchylkou $\sigma_{noise}=0.1$. V diskrétním časovém okamžiku $k=201$ dojde ke změně generátoru signálu a jeho výstup přejde do tvaru
+pro všechny $1 \leq k \leq 200$. Člen $v(k)$ reprezentuje aditivní gaussovský šum s nulovou střední hodnotou a směrodatnou odchylkou $\sigma_{n}=0.1$. V diskrétním časovém okamžiku $k=201$ dojde ke změně generátoru signálu a jeho výstup přejde do tvaru
 \begin{equation}
 y(k)=0.7\cdot x_1(k)+1.2\cdot x_1(k)+1.1 \cdot x_1(k) + v(k)
 \end{equation}

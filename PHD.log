@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.8.30)  15 OCT 2020 00:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.8.30)  15 OCT 2020 09:15
 entering extended mode
 **./PHD.tex
 (PHD.tex
@@ -3091,7 +3091,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 587.
 Here is how much of TeX's memory you used:
  32181 strings out of 480790
  588217 string characters out of 2907055
- 999247 words of memory out of 3000000
+ 999253 words of memory out of 3000000
  46977 multiletter control sequences out of 15000+200000
  553009 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3138,7 +3138,7 @@ TeX/fonts/type1/urw/palatino/uplri8a.pfb><C:/Program Files/MiKTeX/fonts/type1/u
 rw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb>
 <C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiK
 TeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on PHD.pdf (150 pages, 2962475 bytes).
+Output written on PHD.pdf (150 pages, 2962503 bytes).
 PDF statistics:
  4298 PDF objects out of 5155 (max. 8388607)
  555 named destinations out of 1000 (max. 500000)
